@@ -60,5 +60,3 @@ Open source and free to use.
 ---
 
 > ✨ Take control of your productivity with this easy-to-use Task Manager!  
->  
-> _Ready to
