@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts for modern look (optional) -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Task Manager</h1>
+        <div class="main-grid">
+            <form id="task-form">
+                <input type="text" id="title" placeholder="Task Title" required>
+                <textarea id="description" placeholder="Task Description" required></textarea>
+                <div class="datetime-row">
+                    <input type="date" id="due-date" required>
+                    <input type="time" id="due-time" required>
+                </div>
+                <div class="group-row">
+                    <div class="priority-row">
+                        <label for="priority">Priority:</label>
+                        <select id="priority" required>
+                            <option value="Low" selected>Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                        </select>
+                    </div>
+                    <div class="category-row">
+                        <label for="category">Category:</label>
+                        <select id="category" required>
+                            <option value="Work">Work</option>
+                            <option value="Personal">Personal</option>
+                            <option value="Urgent">Urgent</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="recurring-row">
+                        <label for="recurring">Recurring:</label>
+                        <select id="recurring">
+                            <option value="none" selected>None</option>
+                            <option value="daily">Daily</option>
+                            <option value="weekly">Weekly</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="subtasks-row">
+                    <label>Subtasks:</label>
+                    <div id="subtasks-list"></div>
+                    <div class="subtask-inline">
+                        <input type="text" id="subtask-input" placeholder="Add subtask">
+                        <button type="button" id="add-subtask-btn">Add Subtask</button>
+                    </div>
+                </div>
+                <button type="submit">Add Task</button>
+            </form>
+            <div class="task-section">
+                <div class="search-sort-row">
+                    <input type="text" id="search-input" placeholder="Search by keyword or tag...">
+                    <input type="date" id="filter-date">
+                    <select id="sort-select">
+                        <option value="dueDate">Sort by Due Date</option>
+                        <option value="priority">Sort by Priority</option>
+                        <option value="completed">Sort by Completion</option>
+                    </select>
+                </div>
+                <div class="filters">
+                    <button id="all-tasks" class="active">All</button>
+                    <button id="completed-tasks">Completed</button>
+                    <button id="incomplete-tasks">Incomplete</button>
+                </div>
+                <ul id="task-list"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
